@@ -25,7 +25,7 @@ public class FeedbackRecords extends HttpServlet{
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedbackapp","root","Diva19@7@03");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedbackapp","root","");
 			
 			String query = "Select * from feedbacks";
 			PreparedStatement pstmt=con.prepareStatement(query);
@@ -33,7 +33,6 @@ public class FeedbackRecords extends HttpServlet{
 			
 			req.setAttribute("feedbacks", r);
 
-            // Forward the request to feedbackRecords.jsp for rendering
             RequestDispatcher dispatcher = req.getRequestDispatcher("/feedbackrecords.jsp");
             dispatcher.forward(req, resp);
 			
