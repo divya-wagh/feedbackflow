@@ -25,7 +25,7 @@ public class FeedbackServlet extends HttpServlet{
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedbackapp","root","Diva19@7@03");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedbackapp","root","");
 			
 			String query = "insert into feedbacks(email, phone, message) values(?,?,?)";
 			PreparedStatement pstmt = con.prepareStatement(query);
@@ -46,16 +46,6 @@ public class FeedbackServlet extends HttpServlet{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		/*
-		 * resp.setContentType("text/html"); PrintWriter writer = resp.getWriter();
-		 * writer.println("<h1>Feedback servlet working<h1>"); writer.println("""
-		 * <h2>Your form details that you have submitted</h2> <h3>Email address %s</h3>
-		 * <h3>Phone number %s</h3> <h3>Feedback message %s</h3>
-		 * 
-		 * """.formatted(email,phone,feedbackMessage));
-		 */
 	}
 	
 }
