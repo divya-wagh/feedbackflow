@@ -28,7 +28,7 @@
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: #fff; /* Change to your preferred color */
+    background-color: #fff; 
     transition: width 0.4s ease-in-out;
 }
 
